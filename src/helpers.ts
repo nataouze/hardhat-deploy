@@ -525,7 +525,7 @@ export function addHelpers(
       options
     );
 
-    let overrides: PayableOverrides = {
+    const overrides: PayableOverrides = {
       gasLimit: options.gasLimit,
       gasPrice: options.gasPrice,
       maxFeePerGas: options.maxFeePerGas,
@@ -1493,8 +1493,8 @@ Note that in this case, the contract deployment will not behave the same if depl
           upgradeArgsTemplate = ['{implementation}', '{data}'];
         }
 
-        let proxyAddress = proxy.address;
-        let upgradeArgs = replaceTemplateArgs(upgradeArgsTemplate, {
+        const proxyAddress = proxy.address;
+        const upgradeArgs = replaceTemplateArgs(upgradeArgsTemplate, {
           implementationAddress: implementation.address,
           proxyAdmin,
           data,
@@ -2784,9 +2784,7 @@ data: ${data}
   }
   async function getSigner(address: string): Promise<Signer> {
     await init();
-    const {
-      ethersSigner
-    } = await getFrom(address);
+    const {ethersSigner} = await getFrom(address);
     return ethersSigner;
   }
 
@@ -2802,7 +2800,7 @@ data: ${data}
     rawTx,
     read,
     deterministic,
-    getSigner
+    getSigner,
   };
 
   const utils = {

@@ -340,9 +340,7 @@ function transformNamedAccounts(
               addressesToProtocol[address.toLowerCase()] =
                 protocolSplit[0].toLowerCase();
               // knownAccountsDict[address.toLowerCase()] = true; // TODO ? this would prevent auto impersonation in fork/test
-            } else if (
-              protocolSplit[0].toLowerCase() === 'trezor'
-            ) {
+            } else if (protocolSplit[0].toLowerCase() === 'trezor') {
               address = protocolSplit[1];
               addressesToProtocol[address.toLowerCase()] =
                 protocolSplit[0].toLowerCase();
@@ -563,11 +561,14 @@ export function getDeployPaths(network: Network): string[] {
   }
 }
 
-export function filterABI(
-  abi: ABI,
-  excludeSighashes: Set<string>,
-): any[] {
-  return abi.filter(fragment => fragment.type !== 'function' || !excludeSighashes.has(Interface.getSighash(Fragment.from(fragment) as FunctionFragment)));
+export function filterABI(abi: ABI, excludeSighashes: Set<string>): any[] {
+  return abi.filter(
+    (fragment) =>
+      fragment.type !== 'function' ||
+      !excludeSighashes.has(
+        Interface.getSighash(Fragment.from(fragment) as FunctionFragment)
+      )
+  );
 }
 
 export function mergeABIs(

@@ -207,7 +207,7 @@ export async function submitSources(
         break;
       case '1284':
         host = 'https://api-moonbeam.moonscan.io';
-        break;      
+        break;
       case '1285':
         host = 'https://api-moonriver.moonscan.io';
         break;
@@ -233,11 +233,11 @@ export async function submitSources(
         host = 'https://api.snowtrace.io';
         break;
       case '338':
-          host = 'https://api-testnet.cronoscan.com/api';
-          break;
+        host = 'https://api-testnet.cronoscan.com/api';
+        break;
       case '25':
-          host = 'https://api.cronoscan.com/api';
-          break;
+        host = 'https://api.cronoscan.com/api';
+        break;
       case '11155111':
         host = 'https://api-sepolia.etherscan.io';
         break;
