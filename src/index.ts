@@ -378,8 +378,6 @@ async function initCompanionNetworks(hre: HardhatRuntimeEnvironment) {
       throw new Error(`no network named ${networkName}`);
     }
 
-    hre.config;
-
     network.provider = await createProvider(
       hre.config,
       networkName,
