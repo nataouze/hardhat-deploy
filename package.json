@@ -92,7 +92,7 @@
     "test": "mocha --timeout 20000 --exit",
     "build": "tsc",
     "watch": "tsc -w",
-    "prepack": "npm run build",
+    "prepack": "tsc",
     "publish:next": "npm publish --tag next",
     "publish:release": "npm publish",
     "prepublishOnly": "npm run build"
